@@ -1,0 +1,19 @@
+name: Pull Request
+
+on: pull_request
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Bajar codigo
+        uses: actions/checkout@v4
+      - name: Instalacion
+        run: pip install pylint
+      - name: Lint
+        uses: advanced-security/python-lint-code-scanning-action@v1
+        with:
+          linter: pylint
