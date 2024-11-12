@@ -5,6 +5,11 @@ def test_getbalance():
     obj.set_balance(20)
     assert obj.get_balance() == 20
 
+def test_sumbalance():
+    obj = Wallet(0)
+    obj.set_sumbalance()
+    assert obj.get_balance() == 1000
+
 def test_removebalance():
     obj = Wallet(50)
     obj.remove_balance(20)
