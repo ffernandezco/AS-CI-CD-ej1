@@ -1,0 +1,13 @@
+name: EJ1
+on: push
+jobs:
+  ejercicio1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+      - name: Instalar pytest
+        run: pip install pytest
+      - name: Ejecutar tests
+        run: pytest test.py
